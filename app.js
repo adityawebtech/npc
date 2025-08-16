@@ -619,3 +619,38 @@ window.deletePortal = deletePortal;
 window.copyPortalCoords = copyPortalCoords;
 
 console.log('Nether Portal Calculator script loaded successfully!');
+
+// Function to load the header dynamically
+function loadHeader() {
+  fetch('/components/header.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('header-container').innerHTML = html;
+      
+      // Initialize the mobile menu functionality
+      const hamburger = document.querySelector('.hamburger-menu');
+      const mobileNav = document.querySelector('.mobile-nav');
+      
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          mobileNav.classList.toggle('active');
+        });
+      }
+      
+      // Close mobile menu when clicking on a link
+      const mobileLinks = document.querySelectorAll('.mobile-nav a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          mobileNav.classList.remove('active');
+        });
+      });
+    })
+    .catch(error => {
+      console.error('Error loading header:', error);
+    });
+}
+
+// Call the function when the DOM is loaded
+document.addEventListener('DOMContentLoaded', loadHeader);                
