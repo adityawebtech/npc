@@ -1,22 +1,66 @@
-<!-- header.html -->
-<header class="mc-header">
-  <div class="mc-top-bar">
-    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Portal_block.png"
-         class="mc-logo" alt="Nether Portal Icon"/>
-    <span class="mc-title">Nether Portal Calculator</span>
-    <button class="mc-hamburger" id="hamburger-menu" aria-label="Open menu">
-      <span></span><span></span><span></span>
+<!-- components/header.html -->
+<header class="minecraft-header">
+  <!-- Left Side - Hamburger Menu (Mobile) / Nav (Desktop) -->
+  <div class="header-left">
+    <button class="hamburger-menu" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
-    <nav class="mc-nav" id="mc-navbar">
-      <a href="/" class="mc-nav-link">Home</a>
-      <a href="#coordinates" class="mc-nav-link"><span>🗺️</span> Coordinates</a>
-      <a href="#construction" class="mc-nav-link"><span>🧱</span> Build</a>
-      <a href="#tracker" class="mc-nav-link"><span>📜</span> Tracker</a>
-      <a href="#tips" class="mc-nav-link"><span>💡</span> Tips</a>
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/calculator">Calculator</a></li>
+        <li><a href="/guide">Guide</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
     </nav>
   </div>
-  <div class="mc-sub-bar">
-    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/21/Nether.png" alt="Nether Background" class="mc-nether-bg"/>
-    <span class="mc-subtitle">Convert. Track. Build. All in true Minecraft style!</span>
+
+  <!-- Center - Website Name -->
+  <div class="header-center">
+    <h1 class="website-title">Nether Portal Calculator</h1>
+  </div>
+
+  <!-- Right Side - Logo -->
+  <div class="header-right">
+    <svg class="portal-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <!-- Portal Frame -->
+      <rect x="10" y="20" width="80" height="60" rx="2" fill="none" stroke="#6a0dad" stroke-width="4" stroke-linejoin="round"/>
+      
+      <!-- Portal Interior with Animation -->
+      <rect x="14" y="24" width="72" height="52" rx="1">
+        <animate attributeName="fill" values="#4b0082;#8a2be2;#4b0082;#8a2be2" dur="4s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Purple Particles -->
+      <circle cx="30" cy="40" r="1.5" fill="#e6e6fa">
+        <animate attributeName="cx" values="30;32;30;28;30" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="40;42;44;42;40" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="70" cy="60" r="1.5" fill="#e6e6fa">
+        <animate attributeName="cx" values="70;72;70;68;70" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="60;62;64;62;60" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="50" cy="50" r="1" fill="#ffffff">
+        <animate attributeName="r" values="1;2;1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Obsidian Blocks -->
+      <rect x="10" y="20" width="4" height="4" fill="#1a1a1a"/>
+      <rect x="86" y="20" width="4" height="4" fill="#1a1a1a"/>
+      <rect x="10" y="76" width="4" height="4" fill="#1a1a1a"/>
+      <rect x="86" y="76" width="4" height="4" fill="#1a1a1a"/>
+    </svg>
+  </div>
+
+  <!-- Mobile Navigation Menu (Hidden by default) -->
+  <div class="mobile-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/calculator">Calculator</a></li>
+      <li><a href="/guide">Guide</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
   </div>
 </header>
