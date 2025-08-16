@@ -619,3 +619,12 @@ window.deletePortal = deletePortal;
 window.copyPortalCoords = copyPortalCoords;
 
 console.log('Nether Portal Calculator script loaded successfully!');
+
+<!-- Add this script at end of body or in your main JS file -->
+
+const hamburger = document.getElementById('hamburger-menu');
+const navbar = document.getElementById('mc-navbar');
+hamburger.onclick = function() {
+  navbar.classList.toggle('mc-nav-open');
+  hamburger.classList.toggle('open');
+};
