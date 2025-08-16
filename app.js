@@ -622,7 +622,7 @@ console.log('Nether Portal Calculator script loaded successfully!');
 
 // Function to load the header dynamically
 function loadHeader() {
-  fetch('/components/header.html')
+  fetch('./components/header.html')
     .then(response => response.text())
     .then(html => {
       document.getElementById('header-container').innerHTML = html;
