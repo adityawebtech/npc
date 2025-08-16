@@ -1480,6 +1480,14 @@ kbd {
   }
 }
 
+@font-face {
+  font-family: 'Minecraft';
+  src: url('path-to-your-font/Minecraft.woff2') format('woff2'),
+       url('path-to-your-font/Minecraft.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Minecraft-themed header styles */
 .minecraft-header {
   background-color: #2d2d2d;
