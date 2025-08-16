@@ -633,8 +633,8 @@ function loadPartial(id, url) {
 document.addEventListener('DOMContentLoaded', function() {
   // Load header and footer asynchronously, then initialize hamburger
   Promise.all([
-    loadPartial('npc-header', '/header.html'),
-    loadPartial('npc-footer', '/footer.html')
+    loadPartial('npc-header', '/components/header.html'),
+    loadPartial('npc-footer', '/components/footer.html')
   ]).then(() => {
     // Wait briefly to ensure DOM is updated
     setTimeout(() => {
