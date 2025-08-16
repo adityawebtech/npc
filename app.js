@@ -619,33 +619,3 @@ window.deletePortal = deletePortal;
 window.copyPortalCoords = copyPortalCoords;
 
 console.log('Nether Portal Calculator script loaded successfully!');
-
-<!-- Add this script at end of body or in your main JS file -->
-
-function loadPartial(id, url) {
-  return fetch(url)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById(id).innerHTML = html;
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Load header and footer asynchronously, then initialize hamburger
-  Promise.all([
-    loadPartial('npc-header', '/components/header.html'),
-    loadPartial('npc-footer', '/components/footer.html')
-  ]).then(() => {
-    // Wait briefly to ensure DOM is updated
-    setTimeout(() => {
-      const hamburger = document.getElementById('hamburger-menu');
-      const navbar = document.getElementById('mc-navbar');
-      if (hamburger && navbar) {
-        hamburger.onclick = function() {
-          navbar.classList.toggle('mc-nav-open');
-          hamburger.classList.toggle('open');
-        };
-      }
-    }, 100);
-  });
-});
