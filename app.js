@@ -653,4 +653,20 @@ function loadHeader() {
 }
 
 // Call the function when the DOM is loaded
-document.addEventListener('DOMContentLoaded', loadHeader);                
+document.addEventListener('DOMContentLoaded', loadHeader);     
+
+// Dynamic year update
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Load footer (similar to header)
+function loadFooter() {
+  fetch('https://netherportalcalculator.site/components/footer.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+    })
+    .catch(err => console.error('Footer load error:', err));
+}
+
+// Call on DOM load
+document.addEventListener('DOMContentLoaded', loadFooter);
