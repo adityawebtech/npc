@@ -1479,3 +1479,227 @@ kbd {
     align-items: stretch;
   }
 }
+
+/* Minecraft-themed header styles */
+.minecraft-header {
+  background-color: #2d2d2d;
+  background-image: linear-gradient(to right, #1a1a1a, #2d2d2d, #1a1a1a);
+  border-bottom: 4px solid #4b0082;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-left, .header-center, .header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  justify-content: center;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+/* Website Title */
+.website-title {
+  color: #f0f0f0;
+  font-family: 'Minecraft', sans-serif;
+  text-shadow: 3px 3px 0 #4b0082, -1px -1px 0 #4b0082, 1px -1px 0 #4b0082, -1px 1px 0 #4b0082, 1px 1px 0 #4b0082;
+  margin: 0;
+  font-size: 1.8rem;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.website-title:hover {
+  text-shadow: 4px 4px 0 #8a2be2, -2px -2px 0 #8a2be2, 2px -2px 0 #8a2be2, -2px 2px 0 #8a2be2, 2px 2px 0 #8a2be2;
+  transform: scale(1.02);
+}
+
+/* Portal Logo */
+.portal-logo {
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s ease;
+}
+
+.portal-logo:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.7));
+}
+
+/* Desktop Navigation */
+.desktop-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-family: 'Minecraft', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.desktop-nav a:hover {
+  color: #8a2be2;
+  background-color: rgba(74, 0, 130, 0.2);
+}
+
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #8a2be2;
+  transition: all 0.3s ease;
+}
+
+.desktop-nav a:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;
+  height: 40px;
+  z-index: 1001;
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover .bar {
+  background-color: #8a2be2;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: #1a1a1a;
+  border-right: 4px solid #4b0082;
+  padding: 5rem 2rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-family: 'Minecraft', sans-serif;
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav a:hover {
+  color: #8a2be2;
+  background-color: rgba(74, 0, 130, 0.2);
+  padding-left: 1rem;
+}
+
+/* Active state for mobile nav */
+.mobile-nav.active {
+  left: 0;
+}
+
+/* Hamburger animation when active */
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .website-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  .website-title {
+    font-size: 1.3rem;
+  }
+  
+  .portal-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .minecraft-header {
+    padding: 1rem;
+  }
+  
+  .website-title {
+    font-size: 1.1rem;
+  }
+  
+  .portal-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
