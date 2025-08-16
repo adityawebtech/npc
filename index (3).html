@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Nether Portal Calculator - Ultimate Tool for Portal Coordinates</title>
+    <meta name="description" content="Calculate Nether portal coordinates, determine obsidian blocks needed, and manage your portals. Perfect for Java and Bedrock editions.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="header-title">
+                        <span class="portal-icon">🌀</span>
+                        Nether Portal Calculator
+                    </h1>
+                    <p class="header-subtitle">Ultimate tool for Minecraft portal coordinates and construction</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="coordinates">
+                        📍 Coordinate Calculator
+                    </button>
+                    <button class="tab-btn" data-tab="construction">
+                        🧱 Construction Calculator
+                    </button>
+                    <button class="tab-btn" data-tab="tracker">
+                        📋 Portal Tracker
+                    </button>
+                    <button class="tab-btn" data-tab="tips">
+                        💡 Tips & Guide
+                    </button>
+                </div>
+
+                <!-- Coordinate Calculator Tab -->
+                <div class="tab-content active" id="coordinates">
+                    <div class="calculator-grid">
+                        <div class="calculator-section overworld-section">
+                            <h3 class="section-title">
+                                🌍 Overworld Coordinates
+                            </h3>
+                            <div class="coordinate-inputs">
+                                <div class="input-group">
+                                    <label for="overworld-x" class="form-label">X</label>
+                                    <input type="number" id="overworld-x" class="form-control" placeholder="Enter X coordinate">
+                                </div>
+                                <div class="input-group">
+                                    <label for="overworld-y" class="form-label">Y</label>
+                                    <input type="number" id="overworld-y" class="form-control" placeholder="Enter Y coordinate">
+                                </div>
+                                <div class="input-group">
+                                    <label for="overworld-z" class="form-label">Z</label>
+                                    <input type="number" id="overworld-z" class="form-control" placeholder="Enter Z coordinate">
+                                </div>
+                            </div>
+                            <button class="btn btn--primary" id="convert-to-nether">
+                                Convert to Nether →
+                            </button>
+                        </div>
+
+                        <div class="conversion-info">
+                            <div class="ratio-display">
+                                <span class="ratio-text">8:1 Ratio</span>
+                                <div class="ratio-arrow">⟷</div>
+                            </div>
+                        </div>
+
+                        <div class="calculator-section nether-section">
+                            <h3 class="section-title">
+                                🔥 Nether Coordinates
+                            </h3>
+                            <div class="coordinate-inputs">
+                                <div class="input-group">
+                                    <label for="nether-x" class="form-label">X</label>
+                                    <input type="number" id="nether-x" class="form-control" placeholder="Enter X coordinate">
+                                </div>
+                                <div class="input-group">
+                                    <label for="nether-y" class="form-label">Y</label>
+                                    <input type="number" id="nether-y" class="form-control" placeholder="Enter Y coordinate">
+                                </div>
+                                <div class="input-group">
+                                    <label for="nether-z" class="form-label">Z</label>
+                                    <input type="number" id="nether-z" class="form-control" placeholder="Enter Z coordinate">
+                                </div>
+                            </div>
+                            <button class="btn btn--primary" id="convert-to-overworld">
+                                ← Convert to Overworld
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="results-section">
+                        <div class="result-display" id="conversion-result"></div>
+                        <div class="action-buttons">
+                            <button class="btn btn--secondary" id="copy-coordinates">📋 Copy Coordinates</button>
+                            <button class="btn btn--outline" id="clear-coordinates">🗑️ Clear All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Construction Calculator Tab -->
+                <div class="tab-content" id="construction">
+                    <div class="construction-grid">
+                        <div class="construction-inputs">
+                            <h3 class="section-title">🏗️ Portal Dimensions</h3>
+                            <div class="dimension-controls">
+                                <div class="input-group">
+                                    <label for="portal-width" class="form-label">Width (4-23)</label>
+                                    <input type="number" id="portal-width" class="form-control" min="4" max="23" value="4">
+                                </div>
+                                <div class="input-group">
+                                    <label for="portal-height" class="form-label">Height (5-23)</label>
+                                    <input type="number" id="portal-height" class="form-control" min="5" max="23" value="5">
+                                </div>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="include-corners" class="checkbox">
+                                        Include corner blocks
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="btn btn--primary" id="calculate-obsidian">Calculate Obsidian Needed</button>
+                        </div>
+
+                        <div class="portal-preview">
+                            <h3 class="section-title">Portal Preview</h3>
+                            <div class="portal-schematic" id="portal-schematic"></div>
+                        </div>
+                    </div>
+
+                    <div class="obsidian-results" id="obsidian-results"></div>
+                </div>
+
+                <!-- Portal Tracker Tab -->
+                <div class="tab-content" id="tracker">
+                    <div class="tracker-grid">
+                        <div class="add-portal-section">
+                            <h3 class="section-title">➕ Add New Portal</h3>
+                            <form id="add-portal-form" class="portal-form">
+                                <div class="form-group">
+                                    <label for="portal-name" class="form-label">Portal Name</label>
+                                    <input type="text" id="portal-name" class="form-control" placeholder="e.g., Main Base Portal" required>
+                                </div>
+                                <div class="coordinate-grid">
+                                    <div class="form-group">
+                                        <label for="portal-overworld-x" class="form-label">Overworld X</label>
+                                        <input type="number" id="portal-overworld-x" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="portal-overworld-y" class="form-label">Overworld Y</label>
+                                        <input type="number" id="portal-overworld-y" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="portal-overworld-z" class="form-label">Overworld Z</label>
+                                        <input type="number" id="portal-overworld-z" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="portal-notes" class="form-label">Notes (Optional)</label>
+                                    <textarea id="portal-notes" class="form-control" rows="3" placeholder="Add any notes about this portal..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn--primary">Add Portal</button>
+                            </form>
+                        </div>
+
+                        <div class="portal-list-section">
+                            <div class="list-header">
+                                <h3 class="section-title">📋 Saved Portals</h3>
+                                <div class="list-actions">
+                                    <button class="btn btn--outline btn--sm" id="export-portals">📤 Export</button>
+                                    <button class="btn btn--outline btn--sm" id="import-portals">📥 Import</button>
+                                </div>
+                            </div>
+                            <div class="portal-list" id="portal-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips & Guide Tab -->
+                <div class="tab-content" id="tips">
+                    <div class="tips-grid">
+                        <div class="guide-section">
+                            <h3 class="section-title">📚 Quick Guide</h3>
+                            <div class="guide-content">
+                                <h4>How to Use F3 Debug Screen (Java Edition)</h4>
+                                <ul>
+                                    <li>Press <kbd>F3</kbd> to open debug screen</li>
+                                    <li>Look for "XYZ" coordinates in the left panel</li>
+                                    <li>Round decimals to whole numbers</li>
+                                </ul>
+
+                                <h4>Bedrock Edition Coordinates</h4>
+                                <ul>
+                                    <li>Go to Settings → Game → Show Coordinates</li>
+                                    <li>Toggle "Show Coordinates" to ON</li>
+                                    <li>Coordinates appear at the top of screen</li>
+                                </ul>
+
+                                <h4>Portal Linking Rules</h4>
+                                <ul>
+                                    <li>1 block in Nether = 8 blocks in Overworld</li>
+                                    <li>Y coordinate stays the same</li>
+                                    <li>Portals link within 128 block radius in Nether</li>
+                                    <li>Build at exact calculated coordinates for best results</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tips-section">
+                            <h3 class="section-title">💡 Pro Tips</h3>
+                            <div class="tips-list">
+                                <div class="tip-item">
+                                    <span class="tip-icon">🛡️</span>
+                                    <div class="tip-content">
+                                        <strong>Safety First:</strong> Always bring fire resistance potions and extra obsidian
+                                    </div>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="tip-icon">🏗️</span>
+                                    <div class="tip-content">
+                                        <strong>Building Tips:</strong> Build safe platforms around Nether portals to prevent falling into lava
+                                    </div>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="tip-icon">🎯</span>
+                                    <div class="tip-content">
+                                        <strong>Precision:</strong> Build portals at exact calculated coordinates to avoid linking issues
+                                    </div>
+                                </div>
+                                <div class="tip-item">
+                                    <span class="tip-icon">👻</span>
+                                    <div class="tip-content">
+                                        <strong>Ghast-Proof:</strong> Protect portals with cobblestone or other blast-resistant blocks
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="troubleshooting-section">
+                            <h3 class="section-title">🔧 Troubleshooting</h3>
+                            <div class="trouble-list">
+                                <details class="trouble-item">
+                                    <summary>Portal links to wrong location</summary>
+                                    <p>Build at exact calculated coordinates and destroy any conflicting portals within the search radius.</p>
+                                </details>
+                                <details class="trouble-item">
+                                    <summary>Multiple portals interfering</summary>
+                                    <p>Ensure Nether portals are at least 1 block apart, and Overworld portals are at least 8 blocks apart.</p>
+                                </details>
+                                <details class="trouble-item">
+                                    <summary>Portal not generating in safe location</summary>
+                                    <p>Pre-build the portal frame at calculated coordinates instead of relying on auto-generation.</p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-images">
+                        <h3 class="section-title">📸 Portal Reference</h3>
+                        <div class="image-grid">
+                            <div class="reference-image">
+                                <img src="https://pplx-res.cloudinary.com/image/upload/v1755289470/pplx_project_search_images/c8568809b0505d3fc609cfffd9ca6600c2dd177f.png" alt="Portal linking diagram showing coordinate relationships" loading="lazy">
+                                <p class="image-caption">Portal linking diagram showing coordinate relationships</p>
+                            </div>
+                            <div class="reference-image">
+                                <img src="https://pplx-res.cloudinary.com/image/upload/v1755289470/pplx_project_search_images/28d260843eb502e8f6f44c93426b1a71262192a6.png" alt="Map of interconnected Nether portals" loading="lazy">
+                                <p class="image-caption">Example of organized portal network</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Nether Portal Calculator. Perfect for Java & Bedrock editions.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="file-input" accept=".json" style="display: none;">
+
+    <script src="app.js"></script>
+</body>
+</html>
