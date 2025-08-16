@@ -1483,3 +1483,369 @@ kbd {
 @import url('https://fonts.cdnfonts.com/css/minecraft-4');
 .mc-title, .mc-footer-title { font-family: 'Minecraft', 'Press Start 2P', monospace, sans-serif; letter-spacing: 2px; }
                              
+/* Minecraft-Inspired Nether Portal Calculator Header & Footer Styles */
+
+/* ----------- HEADER ----------- */
+
+.mc-header {
+  font-family: 'Minecraft', 'Press Start 2P', monospace, sans-serif;
+  background: linear-gradient(90deg, #281531 0%, #3b1f5e 100%);
+  color: #b074ff;
+  border-bottom: 4px solid #9d6de7;
+  box-shadow: 0 4px 10px rgba(155, 76, 255, 0.6);
+  user-select: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.mc-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  gap: 1rem;
+}
+
+.mc-logo {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 1px #9d6de7);
+  cursor: pointer;
+}
+
+.mc-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #b074ff;
+  text-shadow:
+    0 0 4px #9d6de7,
+    0 0 10px #9d6de7,
+    0 0 14px #9d6de7;
+  cursor: pointer;
+  user-select: text;
+}
+
+/* NAVIGATION */
+
+.mc-nav {
+  display: flex;
+  gap: 1.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  align-items: center;
+}
+
+.mc-nav a {
+  color: #d5bee5;
+  text-decoration: none;
+  padding: 0.45rem 1rem;
+  background: #3b1f5e;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 0 5px rgba(98, 49, 165, 0.8);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.mc-nav a span {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.mc-nav a:hover,
+.mc-nav a:focus-visible {
+  background-color: #9d6de7;
+  color: #281531;
+  border-color: #7e57f9;
+  box-shadow:
+    inset 0 0 8px rgba(127, 91, 255, 1),
+    0 0 8px #9d6de7;
+  outline-offset: 2px;
+  outline-color: #724BB3;
+  outline-style: solid;
+  outline-width: 2px;
+  cursor: pointer;
+}
+
+/* Hamburger Menu Button */
+
+.mc-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+  user-select: none;
+}
+
+.mc-hamburger span {
+  width: 100%;
+  height: 4px;
+  background-color: #b074ff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: 1px 1px;
+}
+
+/* Animate hamburger on toggle */
+.mc-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mc-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mc-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive nav - Hidden by default on smaller screens */
+.mc-nav {
+  transition: transform 0.35s ease;
+}
+
+@media only screen and (max-width: 850px) {
+  .mc-nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    width: 220px;
+    flex-direction: column;
+    padding-top: 2rem;
+    background: #281531;
+    border-right: 3px solid #9d6de7;
+    box-shadow: 3px 0 10px rgba(98, 49, 165, 0.75);
+    transform: translateX(-100%);
+    user-select: none;
+    z-index: 1050;
+    gap: 1.5rem;
+  }
+
+  .mc-nav.mc-nav-open {
+    transform: translateX(0);
+  }
+
+  .mc-nav a {
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+    font-size: 1.15rem;
+    border-radius: 0;
+    box-shadow: none;
+    border-left: 4px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .mc-nav a:hover,
+  .mc-nav a:focus-visible {
+    border-left-color: #b074ff;
+    background: transparent;
+    color: #b074ff;
+    box-shadow: none;
+  }
+
+  .mc-hamburger {
+    display: flex;
+  }
+}
+
+/* Minecraft styled secondary subtitle below nav */
+
+.mc-sub-bar {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem 0.75rem;
+  background: linear-gradient(to right, #4d1e9a, #260d5f);
+  border-bottom: 3px solid #9d6de7;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 12px 12px;
+  user-select: none;
+}
+
+.mc-nether-bg {
+  height: 40px;
+  width: 40px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 4px #b074ff);
+}
+
+.mc-subtitle {
+  font-family: 'Minecraft', monospace, 'Press Start 2P', monospace;
+  font-size: 1rem;
+  color: #d4b4ff;
+  font-weight: 600;
+  text-shadow: 0 0 3px #9853fa;
+  white-space: nowrap;
+}
+
+/* ----------- FOOTER ----------- */
+
+.mc-footer {
+  font-family: 'Minecraft', 'Press Start 2P', monospace, sans-serif;
+  background: #281531;
+  border-top: 4px solid #9d6de7;
+  color: #b4a7ff;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: inset 0 15px 20px -20px rgba(155, 76, 255, 0.7);
+  user-select: none;
+  text-align: center;
+}
+
+.mc-footer-bg {
+  position: absolute;
+  pointer-events: none;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, transparent, #281531 80%);
+}
+
+.mc-footer-content {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.mc-footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 3px #9d6de7);
+}
+
+.mc-footer-icon {
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+  user-select: none;
+  cursor: default;
+}
+
+.mc-footer-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #b074ff;
+  text-shadow: 0 0 6px #8355d7;
+}
+
+/* Footer nav */
+
+.mc-footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-bottom: 1.3rem;
+  font-weight: 600;
+}
+
+.mc-footer-link {
+  color: #d5bee5;
+  text-decoration: none;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: #3b1f5e;
+  box-shadow:
+    inset 0 0 8px rgba(155, 76, 255, 0.65);
+  transition: 
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.mc-footer-link:hover,
+.mc-footer-link:focus-visible {
+  background-color: #9d6de7;
+  color: #281531;
+  border-color: #724bb3;
+  box-shadow:
+    inset 0 0 12px rgba(127, 91, 255, 1),
+    0 0 10px #9d6de7;
+  outline-offset: 2px;
+  outline-color: #724bb3;
+  outline-style: solid;
+  outline-width: 2px;
+  cursor: pointer;
+}
+
+/* Legal text */
+
+.mc-footer-legal {
+  font-size: 0.9rem;
+  color: #9c88cc;
+  font-weight: 400;
+  user-select: text;
+}
+
+.mc-footer-legal span {
+  display: inline-block;
+  margin-top: 0.4rem;
+}
+
+/* Heart emoji styling */
+
+.mc-footer-legal .red-heart, 
+.mc-red-heart {
+  color: #ee4266;
+  font-size: 1.4rem;
+  padding: 0 0.15rem;
+  user-select: none;
+}
+
+/* Responsive footer adjustments */
+
+@media (max-width: 750px) {
+  .mc-footer-icons {
+    gap: 0.9rem;
+  }
+  .mc-footer-title {
+    font-size: 1rem;
+  }
+  .mc-footer-nav {
+    gap: 1rem;
+  }
+  .mc-footer-legal {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .mc-footer-nav {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .mc-footer-title {
+    font-size: 0.95rem;
+  }
+}
