@@ -27,40 +27,6 @@ body {
     padding: 0 15px;
 }
 
-/* Header Styles */
-header {
-    background-color: var(--dark);
-    color: white;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav li {
-    margin-left: 1.5rem;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav a:hover, nav a.active {
-    color: var(--accent);
-}
-
 /* Calculator Styles */
 .calculator-section {
     background-color: white;
@@ -200,37 +166,97 @@ nav a:hover, nav a.active {
     background-color: white;
 }
 
-/* Footer Styles */
-footer {
-    background-color: var(--dark);
-    color: white;
-    padding: 2rem 0;
-    margin-top: 2rem;
+/* Add to existing CSS */
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-footer .container {
+.logo-container a {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-
-footer nav ul {
-    display: flex;
-    margin-top: 1rem;
-}
-
-footer nav li {
-    margin: 0 0.75rem;
-}
-
-footer a {
-    color: #ccc;
+    gap: 10px;
     text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
-footer a:hover {
-    color: white;
+.logo-container img {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mobile Menu */
+@media (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background-color: var(--dark);
+        transition: left 0.3s ease;
+        padding-top: 1rem;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #444;
+        width: 100%;
+    }
+}
+
+/* Tablet/Desktop Menu */
+@media (min-width: 768px) {
+    .logo-container span {
+        display: inline-block;
+    }
+    
+    .nav-menu {
+        display: block !important;
+    }
+}
+
+/* Footer Improvements */
+footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    footer .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 /* Responsive Design */
