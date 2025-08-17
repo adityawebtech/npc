@@ -145,7 +145,7 @@ header .container {
 .logo-text {
     font-size: clamp(0.7rem, 2.5vw, 1.4rem);
     font-weight: 800;
-    color: var(--white);
+    color: var(--text);
     letter-spacing: 0.5px;
     text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
     white-space: nowrap; /* keeps on one line */
@@ -212,7 +212,7 @@ header .container {
 
 .hamburger-line {
     height: 4px;
-    background: var(--white); /* Changed to pure white */
+    background: var(--text); /* Changed to pure white */
     border-radius: 2px;
     transition: all 0.3s ease;
     width: 100%;
