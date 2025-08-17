@@ -194,34 +194,6 @@ header .container {
     font-size: 1.2rem;
 }
 
-.nav-divider {
-    height: 30px;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--border), transparent);
-    margin: 0 20px;
-}
-
-.edition-badge {
-    display: flex;
-    flex-direction: column;
-    background: rgba(29, 9, 45, 0.7);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 6px 12px;
-}
-
-.edition-badge span {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-light);
-    text-align: center;
-}
-
-.edition-badge span:first-child {
-    font-size: 0.85rem;
-    color: var(--text);
-}
-
 /* Hamburger Menu */
 .hamburger {
     display: none;
