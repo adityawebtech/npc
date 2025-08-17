@@ -2,21 +2,34 @@
     <div class="container">
         <div class="logo-container">
             <a href="index.html">
-                <img src="assets/logo.svg" alt="Nether Portal Calculator" width="40" height="40">
-                <span>NetherPortalCalculator</span>
+                <div class="logo-icon">
+                    <div class="obsidian-block"></div>
+                    <div class="portal-core"></div>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">NetherPortal</span>
+                    <span class="logo-subtitle">Calculator</span>
+                </div>
             </a>
         </div>
         
-        <button class="hamburger" aria-label="Toggle menu">
-            <img src="assets/hamburger.svg" alt="Menu" width="24" height="24">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
         </button>
         
         <nav class="nav-menu">
             <ul>
-                <li><a href="index.html">Calculator</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html"><i class="nav-icon">🧮</i> Calculator</a></li>
+                <li><a href="about.html"><i class="nav-icon">📜</i> About</a></li>
+                <li><a href="contact.html"><i class="nav-icon">✉️</i> Contact</a></li>
             </ul>
+            <div class="nav-divider"></div>
+            <div class="edition-badge">
+                <span>Minecraft Tool</span>
+                <span>Java & Bedrock</span>
+            </div>
         </nav>
     </div>
 </header>
