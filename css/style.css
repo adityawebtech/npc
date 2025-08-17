@@ -142,9 +142,13 @@ header .container {
 }
 
 .logo-text {
-    display: flex;
-    flex-direction: column;
+    display: block;
     line-height: 1.1;
+    font-size: 1.3rem;   /* Adjust as needed */
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+    white-space: nowrap;
 }
 
 .logo-title {
@@ -236,7 +240,7 @@ header .container {
 
 .hamburger-line {
     height: 3px;
-    background: var(--text);
+    background: #fff;   /* white */
     border-radius: 2px;
     transition: all 0.3s ease;
 }
