@@ -659,7 +659,7 @@ footer nav a:hover {
     }
 }
 
-@media (max-width: 480px) 
+@media (max-width: 480px) {
 .logo-text {
         font-size: 0.6rem; /* Keep visible on small phones */
     }
