@@ -226,22 +226,23 @@ header .container {
 .hamburger {
     display: none;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 36px;
     height: 36px;
     background: rgba(91, 15, 122, 0.3);
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: 8px;
+    padding: 10px 8px;
     cursor: pointer;
     z-index: 1100;
 }
 
 .hamburger-line {
-    height: 3px;
+    height: 4px;
     background: var(--white); /* Changed to pure white */
     border-radius: 2px;
     transition: all 0.3s ease;
+    width: 100%
 }
 
 .hamburger.active .hamburger-line:nth-child(1) {
@@ -688,7 +689,7 @@ footer nav a:hover {
 
 @media (max-width: 480px) 
 .logo-text {
-        font-size: 1.1rem; /* Keep visible on small phones */
+        font-size: 0.6rem; /* Keep visible on small phones */
     }
     
     .logo-icon {
