@@ -50,12 +50,12 @@
 
         <section class="content-section">
 
-            <h1>What is Nether Portal Calculator?</h1>
-            <p>A Nether Portal Calculator is a specially designed calculator that calculates the coordinates precisely for linking Nether Portals between Minecraft's Overworld and the Nether. A game user can use their current location to get the corresponding coordinates for their next portal calculation in the targeted area and in the targeted dimensions, accounting for Minecraft's unique 8:1 travel ratio. Whether you're building farms, highways, or structures in the game, it's very difficult to remember and to calculate precisely, but using our dedicated Nether Portal Calculator it becomes easier and convenient too.</p>
-
             <div class="image-placeholder">
                 <img src="assets/images/nether portal calculator.png" alt="Nether Portal Calculator" width="800" height="400">
             </div>
+            
+            <h1>What is Nether Portal Calculator?</h1>
+            <p>A Nether Portal Calculator is a specially designed calculator that calculates the coordinates precisely for linking Nether Portals between Minecraft's Overworld and the Nether. A game user can use their current location to get the corresponding coordinates for their next portal calculation in the targeted area and in the targeted dimensions, accounting for Minecraft's unique 8:1 travel ratio. Whether you're building farms, highways, or structures in the game, it's very difficult to remember and to calculate precisely, but using our dedicated Nether Portal Calculator it becomes easier and convenient too.</p>
             
             <h2>Why Minecraft Players Needs "Nether Portal Calculator"?</h2>
             <p><b>1. Precision Saves Resources:</b> Misaligned portals waste time by hours. Imagine mining obsidian for a new portal, only to spawn in a Nether lava lake. A Nether Portal calculator prevents this by ensuring your exit portal generates in a safe, accessible spot and our tool is designed for this only. </p> <br/>
@@ -95,14 +95,26 @@
             <p><i>Test with our calculator—it even adjusts for negative coordinates!</i></p>
             
             <div class="image-placeholder">
-                <img src="assets/images/portal-linking-diagram.png" alt="Nether portal linking diagram in Minecraft" width="800" height="400">
+                <img src="assets/images/portal-linking-diagram.png" alt="Nether portal linking diagram minecraft" width="800" height="400">
             </div>
             
-            <h3>Common Nether Portal Problems & Solutions</h3>
-            <p>Portals linking to wrong locations is a common issue caused by coordinate rounding errors. Always build portals at exact calculated positions...</p>
+            <h3>Nether Portal Coordinate System Explained</h3>
+            <p>For every 1 block traveled in the Nether zone equates to 8 blocks in the Overworld zone. This ratio calculated from the Nether’s compressed geography. If portals aren’t lined up correctly, you can experience ‘portal drift,’ where using a Nether portal sends you back to the wrong place in the Overworld—sometimes thousands of blocks away from your base.</p><br>
+            <h4>Common Mistakes When Linking Portals</h4>
+            <ol>
+            <li>Ignoring Y-Axis: Building portals at different heights (e.g., Overworld Y=120 vs. Nether Y=60) breaks links.</li>
+            <li>Rounding Errors: Manually dividing coordinates like "1000 ÷ 8 = 125" often misses exact alignment.</li>
+            <li>Chunk Borders: Portals spanning chunk boundaries (16-block segments) confuse the linking algorithm.</li> 
+            </ol><br>
             
-            <h3>Advanced Portal Linking Strategies</h3>
-            <p>For complex networks, use these techniques: Portal chunk alignment, Coordinate offsetting, Multiple portal verification...</p>
+            <h3>How to Fix Broken Portal Links?</h3>
+            <p>Here are the few ways through which you can easily fix the broken portal links.</p>
+            <ol>
+            <li><b>Check Coordinates:</b> Verify both portals’ positions match the 8:1 ratio using our calculator.</li>
+            <li><b>Rebuild the Problem Portal:</b> Break and rebuild the portal that’s mislinking.</li>
+            <li><b>Increase Proximity:</b> If portals are too distant, build intermediary ones every 128 blocks (Java) or 16 blocks (Bedrock).</li>
+            <li><b>Use Eyes of Ender:</b> In creative mode, they highlight linked portals.</li>
+            </ol>
         </section>
 
         <section class="faq-section">
