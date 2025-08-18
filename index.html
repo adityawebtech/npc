@@ -28,7 +28,8 @@
 
     <main class="container">
         <section class="calculator-section">
-            <h2>Minecraft Nether Portal Calculator</h2>
+            <h2>Minecraft Nether Portal Calculator</h2><br>
+            <h3>Lost in the Nether? Find your perfect coordinates fast!</h3>
             <div class="calculator">
                 <div class="mode-toggle">
                     <button class="active" data-mode="overworld-to-nether">Overworld → Nether</button>
@@ -100,7 +101,7 @@
             
             <h3>Nether Portal Coordinate System Explained</h3>
             <p>For every 1 block traveled in the Nether zone equates to 8 blocks in the Overworld zone. This ratio calculated from the Nether’s compressed geography. If portals aren’t lined up correctly, you can experience ‘portal drift,’ where using a Nether portal sends you back to the wrong place in the Overworld—sometimes thousands of blocks away from your base.</p><br>
-            <h4>Common Mistakes When Linking Portals</h4>
+            <h4>Common Mistakes When Linking Portals</h4><br>
             <ol>
             <li>Ignoring Y-Axis: Building portals at different heights (e.g., Overworld Y=120 vs. Nether Y=60) breaks links.</li>
             <li>Rounding Errors: Manually dividing coordinates like "1000 ÷ 8 = 125" often misses exact alignment.</li>
@@ -122,23 +123,24 @@
             <div class="faq">
                 <details>
                     <summary>How to calculate Nether portal coordinates?</summary>
-                    <p>To calculate Nether coordinates from Overworld: Divide X and Z coordinates by 8 while keeping Y unchanged...</p>
+                    <p>Enter your Overworld X and Z coordinates into a Nether Portal Calculator. Divide these by 8 for Nether portal placement. 
+                       For Nether to Overworld, multiply X and Z by 8. Y stays the same. Alternatively, you can use our dedicated "Overworld to Nether" calculator to easily calculate nether portals.</p>
                 </details>
                 <details>
                     <summary>Why does my Nether portal link to the wrong location?</summary>
-                    <p>This happens when existing portals are closer than your calculated position. The game always links to the nearest active portal...</p>
+                    <p>If portals aren’t placed at exact matching coordinates (X, Z, and preferably Y), Minecraft may link to the closest portal within a radius. Blocked spots or nearby portals can also cause mislinking.</p>
                 </details>
                 <details>
                     <summary>How far should Nether portals be apart?</summary>
-                    <p>In the Overworld, portals must be at least 128 blocks apart to prevent linking conflicts. In the Nether, this distance is 16 blocks...</p>
+                    <p>To avoid accidental linking, space Nether portals in the Nether at least 16 blocks apart, and in the Overworld at least 128 blocks apart.</p>
                 </details>
                 <details>
                     <summary>How to calculate Nether portal travel distance?</summary>
-                    <p>Nether travel is 8x faster than Overworld. Formula: Distance = √(Δx² + Δz²) / 8...</p>
+                    <p>Distance traveled in the Nether is eight times faster than the Overworld. Multiply your Nether distance by 8 to get Overworld distance; divide Overworld by 8 for Nether.</p>
                 </details>
                 <details>
                     <summary>Do Y coordinates matter for Nether portals?</summary>
-                    <p>Y coordinates have minimal impact on portal linking. The game primarily checks X and Z positions when connecting portals...</p>
+                    <p>Y (height) usually doesn’t affect linking unless portals are close together vertically. For best results, match the Y values as closely as possible.</p>
                 </details>
             </div>
         </section>
