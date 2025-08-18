@@ -197,3 +197,88 @@
     padding-top: 30px;
     border-top: 1px solid var(--border);
 }
+
+/* ===== MOBILE OVERLAY FIXES ===== */
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    .content-section, 
+    .faq-section, 
+    .calculator-section,
+    .contact-form {
+        padding: 20px 15px;
+        margin-left: -5px;
+        margin-right: -5px;
+        width: calc(100% + 10px);
+        max-width: calc(100% + 10px);
+    }
+    
+    .info-card {
+        padding: 20px 15px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 10px;
+        font-size: 0.95rem;
+    }
+    
+    .edition-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .social-link {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 8px;
+    }
+    
+    .content-section, 
+    .faq-section, 
+    .calculator-section,
+    .contact-form {
+        padding: 15px 10px;
+        margin-left: -8px;
+        margin-right: -8px;
+        width: calc(100% + 16px);
+        max-width: calc(100% + 16px);
+        border-radius: 8px;
+    }
+    
+    .contact-container {
+        gap: 20px;
+    }
+    
+    .info-card {
+        padding: 15px 10px;
+    }
+    
+    .contact-link {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+}
