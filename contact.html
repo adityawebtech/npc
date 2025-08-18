@@ -102,7 +102,6 @@
     <h2><i class="icon">📝</i> Send Us a Message</h2>
     <form id="contactForm" action="https://formspree.io/f/mblkezya" method="POST">
         <input type="hidden" name="_subject" value="New Contact from Nether Portal Calculator">
-        <input type="hidden" name="_replyto" value="globalwebkraftofficial@gmail.com">
         
         <div class="form-group">
             <label for="name">Your Name</label>
@@ -190,12 +189,13 @@
         
         // Show loading state
         const submitBtn = document.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.textContent;
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
         
         // Submit to Formspree
         fetch(this.action, {
-            method: this.method,
+            method: 'POST',
             body: new FormData(this),
             headers: {
                 'Accept': 'application/json'
@@ -203,19 +203,19 @@
         })
         .then(response => {
             if (response.ok) {
-                alert('Thank you for your message! We will respond within 24 hours.');
+                alert('✅ Thank you for your message! We will respond within 24 hours.');
                 this.reset();
             } else {
-                throw new Error('Form submission failed');
+                throw new Error('Form submission failed with status: ' + response.status);
             }
         })
         .catch(error => {
-            alert('There was a problem sending your message. Please try again later or email us directly.');
+            alert('❌ There was a problem sending your message. Please try again later or email us directly at support@netherportalcalculator.site');
             console.error('Form submission error:', error);
         })
         .finally(() => {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
+            submitBtn.textContent = originalBtnText;
         });
     });
 </script>
