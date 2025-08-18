@@ -4,6 +4,10 @@
     margin: 40px auto;
 }
 
+.content-section h1 {
+    text-align: center;
+}
+
 .subtitle {
     font-size: 1.3rem;
     color: var(--accent-light);
