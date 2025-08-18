@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Nether Portal Calculator - Minecraft Portal Experts</title>
-    <meta name="title" content="Contact Nether Portal Calculator Experts - Minecraft Portal Help" />
+    <title>Contact Us - Nether Portal Calculator</title>
+    <meta name="title" content="Contact Us - Nether Portal Calculator" />
     <meta name="description" content="Need help with Nether portals? Contact our Minecraft experts for portal linking issues, coordinate problems, and calculator support. Fast responses guaranteed!" />
     <link rel="canonical" href="https://netherportalcalculator.site/contact.html" />
     <meta name="robots" content="index, follow">
@@ -16,14 +16,14 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://netherportalcalculator.site/contact.html" />
-    <meta property="og:title" content="Contact Minecraft Nether Portal Experts - Support & Help" />
+    <meta property="og:title" content="Contact Us - Nether Portal Calculator />
     <meta property="og:description" content="Get help with Nether portal calculations, linking issues, and coordinate problems. Contact our Minecraft experts today!" />
     <meta property="og:image" content="https://netherportalcalculator.site/assets/images/nether-portal-contact.png" />
 
     <!-- X (Twitter) -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://netherportalcalculator.site/contact.html" />
-    <meta property="twitter:title" content="Contact Nether Portal Calculator Support - Minecraft Help" />
+    <meta property="twitter:title" content="Contact Us - Nether Portal Calculator" />
     <meta property="twitter:description" content="Need assistance with portal calculations? Contact our Minecraft experts for quick solutions to Nether portal problems." />
     <meta property="twitter:image" content="https://netherportalcalculator.site/assets/images/nether-portal-contact.png" />
 
@@ -100,7 +100,9 @@
                 
                 <div class="contact-form">
                     <h2><i class="icon">📝</i> Send Us a Message</h2>
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/mblkezya" method="POST">
+                        <input type="hidden" name="_subject" value="New Contact from Nether Portal Calculator">
+<input type="hidden" name="_replyto" value="support@netherportalcalculator.site">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -173,25 +175,40 @@
     </main>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Form validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !message) {
-                alert('Please fill in all required fields');
-                return;
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Form validation
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        if (!name || !email || !message) {
+            alert('Please fill in all required fields');
+            return;
+        }
+        
+        // Submit to Formspree
+        fetch(this.action, {
+            method: this.method,
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
             }
-            
-            // Form submission simulation
-            alert('Thank you for your message! Due to GitHub Pages limitations, this is a demonstration form. In a production environment, this would connect to a backend service.');
-            
-            // Reset form
-            this.reset();
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Thank you for your message! We will respond soon.');
+                this.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            alert('There was a problem sending your message. Please try again later.');
+            console.error('Form submission error:', error);
         });
-    </script>
+    });
+</script>
 </body>
 </html>
