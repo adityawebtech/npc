@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://netherportalcalculator.site/sitemap.xml
