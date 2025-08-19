@@ -8,32 +8,39 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- About Page -->
+  <url>
+    <loc>https://netherportalcalculator.site/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Disclaimer Page -->
   <url>
-    <loc>https://netherportalcalculator.site/disclaimer</loc>
+    <loc>https://netherportalcalculator.site/disclaimer.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Terms & Conditions Page -->
   <url>
-    <loc>https://netherportalcalculator.site/terms</loc>
+    <loc>https://netherportalcalculator.site/terms.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Contact Page -->
   <url>
-    <loc>https://netherportalcalculator.site/contact</loc>
+    <loc>https://netherportalcalculator.site/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <!-- Tool Page -->
+  <!-- Privacy Policy Page -->
   <url>
-    <loc>https://netherportalcalculator.site/portal-calculator</loc>
+    <loc>https://netherportalcalculator.site/privacy-policy.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
