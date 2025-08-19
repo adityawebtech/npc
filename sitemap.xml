@@ -1,64 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <url>
-        <loc>https://netherportalcalculator.site/</loc>
-        <lastmod>2023-08-18</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.00</priority>
-        <xhtml:link 
-            rel="alternate" 
-            hreflang="en" 
-            href="https://netherportalcalculator.site/" />
-    </url>
-    <url>
-        <loc>https://netherportalcalculator.site/about.html</loc>
-        <lastmod>2023-08-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-        <xhtml:link 
-            rel="alternate" 
-            hreflang="en" 
-            href="https://netherportalcalculator.site/about.html" />
-    </url>
-    <url>
-        <loc>https://netherportalcalculator.site/contact.html</loc>
-        <lastmod>2023-08-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-        <xhtml:link 
-            rel="alternate" 
-            hreflang="en" 
-            href="https://netherportalcalculator.site/contact.html" />
-    </url>
-    <url>
-        <loc>https://netherportalcalculator.site/privacy-policy.html</loc>
-        <lastmod>2023-08-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-        <xhtml:link 
-            rel="alternate" 
-            hreflang="en" 
-            href="https://netherportalcalculator.site/privacy-policy.html" />
-    </url>
-    <url>
-        <loc>https://netherportalcalculator.site/disclaimer.html</loc>
-        <lastmod>2023-08-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-        <xhtml:link 
-            rel="alternate" 
-            hreflang="en" 
-            href="https://netherportalcalculator.site/disclaimer.html" />
-    </url>
-    <url>
-        <loc>https://netherportalcalculator.site/terms.html</loc>
-        <lastmod>2023-08-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-        <xhtml:link 
-            rel="alternate" 
-            hreflang="en" 
-            href="https://netherportalcalculator.site/terms.html" />
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://netherportalcalculator.site/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Disclaimer Page -->
+  <url>
+    <loc>https://netherportalcalculator.site/disclaimer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Terms & Conditions Page -->
+  <url>
+    <loc>https://netherportalcalculator.site/terms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://netherportalcalculator.site/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Tool Page -->
+  <url>
+    <loc>https://netherportalcalculator.site/portal-calculator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
